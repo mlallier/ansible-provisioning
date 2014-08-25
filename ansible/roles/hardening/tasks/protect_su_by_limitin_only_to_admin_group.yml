@@ -1,0 +1,17 @@
+---
+
+- name: Protect su by limiting access only to admin group
+  group: 
+    name=admin 
+    state=present
+    
+- name: "usermod -a -G admin {{ username }}"
+  shell: usermod -a -G admin {{ username }}
+  
+- name: "usermod -a -G admin webdev"
+  shell: usermod -a -G admin webdev
+  
+- name: "dpkg-statoverride --update --add root admin 4750 /bin/su"
+  command: dpkg-statoverride --update --force --add root admin 4750 /bin/su
+
+        

@@ -1,0 +1,60 @@
+---
+
+
+# Based on https://www.exratione.com/2013/12/angularjs-headless-end-to-end-testing-with-protractor-and-selenium/
+
+- name: Install packages for testing
+  apt: 
+    name={{ item }} 
+    state=present 
+    update_cache=yes
+  with_items:
+    - xvfb
+    - x11-xkb-utils 
+    - xfonts-100dpi 
+    - xfonts-75dpi
+    - xfonts-scalable 
+    - xserver-xorg-core
+    - dbus-x11
+    - libfontconfig1-dev
+    - chromium-browser 
+    - firefox
+    - imagemagick
+
+- name: Install node packages global
+  npm: 
+    name={{ item }} 
+    global=yes
+    state=present
+  with_items:
+  - phantomjs
+  - protractor
+  - chromedriver
+  - jshint
+  - jslint
+  - plato
+  
+  
+- name: Install file for xvfb
+  template:
+    src=xvfb.j2
+    dest=/etc/init.d/xvfb
+    backup=yes
+
+- name: Make sure xvfb is executable, owned by root, and that the service definitions are updated. Anything running with the environment DISPLAY=:10 will use Xvfb, meaning that the Ubuntu server can now run software with a GUI in a headless mode. As you'll quickly find out, however, most software will require some additional packages that are not present on an Ubuntu server.
+  shell: 'chown root:root /etc/init.d/xvfb; chmod a+x /etc/init.d/xvfb; update-rc.d  xvfb defaults'
+
+
+- name: Install file for selenium
+  template:
+    src=selenium.j2
+    dest=/etc/init.d/selenium    
+    backup=yes
+
+- name: Make sure it is executable, owned by root, and that the service definitions are updated
+  shell: 'chown root:root /etc/init.d/selenium; chmod a+x /etc/init.d/selenium; update-rc.d selenium defaults'
+   
+
+- name: Work Around a Protractor / PhantomJS Issue
+  shell: touch /phantomjsdriver.log; chmod 666 /phantomjsdriver.log
+  

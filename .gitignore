@@ -1,0 +1,8 @@
+.vagrant
+.vagrant.d
+ansible/group_vars/all
+vagrant/home/.bash_history
+
+.DS_Store
+
+

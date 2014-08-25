@@ -1,0 +1,30 @@
+# The name of the OS user (JohnDoe, ubuntu, vagrant)
+username: USERNAME
+password: 'PASSWORD'
+
+webdev_password: 'PASSWORD'
+
+# MySQL root password
+mysql_password: PASSWORD
+
+# Timezone
+server_timezone: Europe/Amsterdam
+
+# Locale
+locale: en_US.UTF-8
+
+#####################
+#
+# Hardening 
+#
+#####################
+
+ssh_port: 65001
+
+fail2ban:
+  config:
+    ignoreip: 127.0.0.1/8
+    bantime: 300
+    maxretry: 6
+    filter: sshd
+    port: "{{ ssh_port }}"

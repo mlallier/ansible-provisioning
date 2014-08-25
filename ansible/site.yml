@@ -1,0 +1,6 @@
+---
+
+- include: packages.yml
+- include: users.yml
+- include: hardening.yml
+- include: test.yml
