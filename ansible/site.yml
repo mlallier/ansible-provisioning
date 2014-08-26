@@ -2,6 +2,7 @@
 
 - include: packages.yml
 - include: users.yml
+- include: students.yml
 - include: test.yml
 
 #### Hardening should be the last step
