@@ -1,11 +1,8 @@
 ---
 
 
-- name: Create users
-  template: 
-    src=newusers.j2
-    dest=/tmp/newusers.txt 
-  notify: create users
+- user: name={{username}} password={{password}} state=present
+- user: name=webdev password={{webdev_password}} state=present
 
 - name: Copy sudoers file for safety
   command: cp -f /etc/sudoers /etc/sudoers.tmp
@@ -29,3 +26,4 @@
     
 - name: Validate and copy temporary sudoers file
   shell: visudo -q -c -f /etc/sudoers.tmp && cp -f /etc/sudoers.tmp /etc/sudoers   
+
