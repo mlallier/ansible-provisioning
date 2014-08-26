@@ -60,7 +60,6 @@
       - ::1
       - localhost
 
-
 - name: Ensure anonymous users are not in the database
   mysql_user: 
     name='' host={{ item }} 

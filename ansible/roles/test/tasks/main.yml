@@ -1,6 +1,5 @@
 ---
 
-
 # Based on https://www.exratione.com/2013/12/angularjs-headless-end-to-end-testing-with-protractor-and-selenium/
 
 - name: Install packages for testing
@@ -29,32 +28,75 @@
   with_items:
   - phantomjs
   - protractor
-  - chromedriver
-  - jshint
-  - jslint
-  - plato
-  
+  - chromedriver  
   
 - name: Install file for xvfb
   template:
     src=xvfb.j2
     dest=/etc/init.d/xvfb
-    backup=yes
-
+    owner=root 
+    group=root 
+    mode=0755
+    
 - name: Make sure xvfb is executable, owned by root, and that the service definitions are updated. Anything running with the environment DISPLAY=:10 will use Xvfb, meaning that the Ubuntu server can now run software with a GUI in a headless mode. As you'll quickly find out, however, most software will require some additional packages that are not present on an Ubuntu server.
-  shell: 'chown root:root /etc/init.d/xvfb; chmod a+x /etc/init.d/xvfb; update-rc.d  xvfb defaults'
+  shell: update-rc.d  xvfb defaults
+
+#######
+# Selenium
+#######
+- name: Create selenium user
+  shell: /usr/sbin/useradd -m -s /bin/bash -d /home/selenium selenium
+
+- name: Create selenium directory
+  shell: mkdir /usr/local/share/selenium  
+
+- name: Get selenium file
+  get_url:
+    url=http://selenium-release.storage.googleapis.com/{{ ".".join(selenium_version.split(".")[:2]) }}/selenium-server-standalone-{{ selenium_version }}.jar
+    dest=/usr/local/share/selenium
+
+- name: Take selenium ownership
+  shell: chown -R selenium:selenium /usr/local/share/selenium
+
+- name: Create log dir for selenium and take ownership
+  shell: mkdir /var/log/selenium; chown selenium:selenium /var/log/selenium
 
 
-- name: Install file for selenium
+- name: Install configuration file for selenium
   template:
     src=selenium.j2
     dest=/etc/init.d/selenium    
-    backup=yes
+    owner=root 
+    group=root 
+    mode=0755
 
-- name: Make sure it is executable, owned by root, and that the service definitions are updated
-  shell: 'chown root:root /etc/init.d/selenium; chmod a+x /etc/init.d/selenium; update-rc.d selenium defaults'
+- name: Make sure selenium is executable, owned by root, and that the service definitions are updated
+  shell: update-rc.d selenium defaults
    
 
 - name: Work Around a Protractor / PhantomJS Issue
   shell: touch /phantomjsdriver.log; chmod 666 /phantomjsdriver.log
   
+
+
+
+
+- name: Create directory /home/{{username}}/workspaces
+  file: 
+    state=directory
+    owner={{username}}
+    path=/home/{{ username }}/workspaces
+
+- name: Get github repo for protractor test
+  git:
+    repo=https://github.com/theotheu/protractorTest.git 
+    dest=/home/{{ username }}/workspaces/protractorTest
+
+- name: Take ownership
+  shell: chown -R {{username}}:{{username}} /home/{{username}}
+
+#########
+# webdriver-manager
+#########
+- name: Update webdriver-manager
+  command: webdriver-manager update

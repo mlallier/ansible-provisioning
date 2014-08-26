@@ -6,7 +6,7 @@
 - name: Make sure bind9 is installed (not all ubuntu images have bind installed by default)
   apt: 
     pkg=bind9
-    state=installed 
+    state=present 
     update-cache=yes    
        
 - name: Disable Open DNS recursion and remove version info

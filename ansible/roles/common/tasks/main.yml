@@ -39,3 +39,9 @@
     dest=/etc/issue.net    
     backup=yes
   notify: restart ssh
+  
+
+- name: Install git
+  apt:
+    name=git
+    state=present  

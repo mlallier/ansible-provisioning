@@ -2,6 +2,7 @@
 .vagrant.d
 ansible/group_vars/all
 vagrant/home/.bash_history
+vagrant/home/*
 
 .DS_Store
 
