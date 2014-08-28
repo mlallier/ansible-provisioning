@@ -41,21 +41,25 @@
 	#bind-address            = 127.0.0.1
 	#bind-address            = 127.0.0.1
 ""-	CHAR	0
-	#
+	phantomjs
 
 # File marks:
-'0  1  412  /root/.ssh/authorized_keys
-'1  2  0  /root/.ssh/authorized_keys
-'2  47  0  /etc/mysql/my.cnf
-'3  46  0  /etc/mysql/my.cnf
-'4  127  0  /etc/mysql/my.cnf
-'5  126  0  /etc/mysql/my.cnf
-'6  1  0  /etc/mysql/my.cnf
-'7  3  0  /etc/mysql/my.cnf
-'8  51  0  /etc/mysql/my.cnf
-'9  130  0  /etc/mysql/my.cnf
+'0  17  30  ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/test/e2e/conf.js
+'1  9  31  ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/server/config/config.js
+'2  1  412  /root/.ssh/authorized_keys
+'3  2  0  /root/.ssh/authorized_keys
+'4  47  0  /etc/mysql/my.cnf
+'5  46  0  /etc/mysql/my.cnf
+'6  127  0  /etc/mysql/my.cnf
+'7  126  0  /etc/mysql/my.cnf
+'8  1  0  /etc/mysql/my.cnf
+'9  3  0  /etc/mysql/my.cnf
 
 # Jumplist (newest first):
+-'  17  30  ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/test/e2e/conf.js
+-'  1  0  ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/test/e2e/conf.js
+-'  9  31  ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/server/config/config.js
+-'  1  0  ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/server/config/config.js
 -'  1  412  /root/.ssh/authorized_keys
 -'  2  0  /root/.ssh/authorized_keys
 -'  47  0  /etc/mysql/my.cnf
@@ -92,8 +96,74 @@
 -'  46  0  /etc/mysql/my.cnf
 -'  127  0  /etc/mysql/my.cnf
 -'  126  0  /etc/mysql/my.cnf
+-'  1  412  /root/.ssh/authorized_keys
+-'  2  0  /root/.ssh/authorized_keys
+-'  47  0  /etc/mysql/my.cnf
+-'  1  0  /etc/mysql/my.cnf
+-'  46  0  /etc/mysql/my.cnf
+-'  127  0  /etc/mysql/my.cnf
+-'  126  0  /etc/mysql/my.cnf
+-'  3  0  /etc/mysql/my.cnf
+-'  51  0  /etc/mysql/my.cnf
+-'  130  0  /etc/mysql/my.cnf
+-'  48  0  /etc/mysql/my.cnf
+-'  131  0  /etc/mysql/my.cnf
+-'  44  0  /etc/mysql/my.cnf
+-'  132  0  /etc/mysql/my.cnf
+-'  47  0  /etc/mysql/my.cnf
+-'  1  0  /etc/mysql/my.cnf
+-'  46  0  /etc/mysql/my.cnf
+-'  127  0  /etc/mysql/my.cnf
+-'  126  0  /etc/mysql/my.cnf
+-'  47  0  /etc/mysql/my.cnf
+-'  1  0  /etc/mysql/my.cnf
+-'  46  0  /etc/mysql/my.cnf
+-'  127  0  /etc/mysql/my.cnf
+-'  126  0  /etc/mysql/my.cnf
+-'  3  0  /etc/mysql/my.cnf
+-'  51  0  /etc/mysql/my.cnf
+-'  130  0  /etc/mysql/my.cnf
+-'  48  0  /etc/mysql/my.cnf
+-'  131  0  /etc/mysql/my.cnf
+-'  44  0  /etc/mysql/my.cnf
+-'  132  0  /etc/mysql/my.cnf
+-'  47  0  /etc/mysql/my.cnf
+-'  1  0  /etc/mysql/my.cnf
+-'  46  0  /etc/mysql/my.cnf
+-'  127  0  /etc/mysql/my.cnf
+-'  126  0  /etc/mysql/my.cnf
+-'  9  31  ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/server/config/config.js
+-'  1  0  ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/server/config/config.js
+-'  1  412  /root/.ssh/authorized_keys
+-'  2  0  /root/.ssh/authorized_keys
+-'  47  0  /etc/mysql/my.cnf
+-'  1  0  /etc/mysql/my.cnf
+-'  46  0  /etc/mysql/my.cnf
+-'  127  0  /etc/mysql/my.cnf
+-'  126  0  /etc/mysql/my.cnf
+-'  3  0  /etc/mysql/my.cnf
+-'  51  0  /etc/mysql/my.cnf
+-'  130  0  /etc/mysql/my.cnf
+-'  48  0  /etc/mysql/my.cnf
+-'  131  0  /etc/mysql/my.cnf
+-'  44  0  /etc/mysql/my.cnf
+-'  132  0  /etc/mysql/my.cnf
+-'  47  0  /etc/mysql/my.cnf
+-'  1  0  /etc/mysql/my.cnf
+-'  46  0  /etc/mysql/my.cnf
+-'  127  0  /etc/mysql/my.cnf
+-'  126  0  /etc/mysql/my.cnf
 
 # History of marks within files (newest to oldest):
+
+> ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/test/e2e/conf.js
+	"	17	30
+	^	17	31
+	.	17	30
+	+	17	30
+
+> ~/workspaces/webdev-server/unit06/01-mongo_with_subdocuments/server/config/config.js
+	"	9	31
 
 > /root/.ssh/authorized_keys
 	"	1	412

@@ -12,6 +12,7 @@
     - x11-xkb-utils 
     - xfonts-100dpi 
     - xfonts-75dpi
+    - xfonts-cyrillic
     - xfonts-scalable 
     - xserver-xorg-core
     - dbus-x11
@@ -26,6 +27,7 @@
     global=yes
     state=present
   with_items:
+  - selenium-webdriver
   - phantomjs
   - protractor
   - chromedriver  
@@ -44,34 +46,34 @@
 #######
 # Selenium
 #######
-- name: Create selenium user
-  shell: /usr/sbin/useradd -m -s /bin/bash -d /home/selenium selenium
+#- name: Create selenium user
+#  shell: /usr/sbin/useradd -m -s /bin/bash -d /home/selenium selenium
 
-- name: Create selenium directory
-  shell: mkdir /usr/local/share/selenium  
+#- name: Create selenium directory
+#  shell: mkdir /usr/local/share/selenium  
 
-- name: Get selenium file
-  get_url:
-    url=http://selenium-release.storage.googleapis.com/{{ ".".join(selenium_version.split(".")[:2]) }}/selenium-server-standalone-{{ selenium_version }}.jar
-    dest=/usr/local/share/selenium
+#- name: Get selenium file
+#  get_url:
+#    url=http://selenium-release.storage.googleapis.com/{{ ".".join(selenium_version.split(".")[:2]) }}/selenium-server-standalone-{{ selenium_version }}.jar
+#    dest=/usr/local/share/selenium
 
-- name: Take selenium ownership
-  shell: chown -R selenium:selenium /usr/local/share/selenium
+#- name: Take selenium ownership
+#  shell: chown -R selenium:selenium /usr/local/share/selenium
 
-- name: Create log dir for selenium and take ownership
-  shell: mkdir /var/log/selenium; chown selenium:selenium /var/log/selenium
+#- name: Create log dir for selenium and take ownership
+#  shell: mkdir /var/log/selenium; chown selenium:selenium /var/log/selenium
 
 
-- name: Install configuration file for selenium
-  template:
-    src=selenium.j2
-    dest=/etc/init.d/selenium    
-    owner=root 
-    group=root 
-    mode=0755
+#- name: Install configuration file for selenium
+#  template:
+#    src=selenium.j2
+#    dest=/etc/init.d/selenium    
+#    owner=root 
+#    group=root 
+#    mode=0755
 
-- name: Make sure selenium is executable, owned by root, and that the service definitions are updated
-  shell: update-rc.d selenium defaults
+#- name: Make sure selenium is executable, owned by root, and that the service definitions are updated
+#  shell: update-rc.d selenium defaults
    
 
 - name: Work Around a Protractor / PhantomJS Issue
@@ -79,24 +81,8 @@
   
 
 
-
-
-- name: Create directory /home/{{username}}/workspaces
-  file: 
-    state=directory
-    owner={{username}}
-    path=/home/{{ username }}/workspaces
-
-- name: Get github repo for protractor test
-  git:
-    repo=https://github.com/theotheu/protractorTest.git 
-    dest=/home/{{ username }}/workspaces/protractorTest
-
-- name: Take ownership
-  shell: chown -R {{username}}:{{username}} /home/{{username}}
-
 #########
 # webdriver-manager
 #########
-- name: Update webdriver-manager
-  command: webdriver-manager update
+#- name: Update webdriver-manager
+#  command: webdriver-manager update

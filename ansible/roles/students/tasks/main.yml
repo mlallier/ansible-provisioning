@@ -1,5 +1,8 @@
 ---
 
+# passwords below are created on the target machine with this python command
+# python -c 'import crypt; print crypt.crypt("This is my Password", "$1$SomeSalt$")';
+
 - user: name=s542530 password=$1$SomeSalt$.uq7zIpBXU/1emiCGdmEN/ state=present shell=/bin/bash
 - user: name=s522102 password=$1$SomeSalt$k5CbpEkq9bEYMqRcsabg7. state=present shell=/bin/bash
 - user: name=s532141 password=$1$SomeSalt$VF87AuQVnojrjU/m1RsvG/ state=present shell=/bin/bash
@@ -40,3 +43,26 @@
 - user: name=s525148 password=$1$SomeSalt$jyTRBwhYOi7D9sxxVD6rM0 state=present shell=/bin/bash
 - user: name=s523896 password=$1$SomeSalt$qbtEKoW2hOS6tDy.V1IzS1 state=present shell=/bin/bash
 - user: name=s523701 password=$1$SomeSalt$vwhxxyIdY3B/zxOmulaWX0 state=present shell=/bin/bash
+- user: name=s517143 password=$1$SomeSalt$FQnQ4g.2KbQu42HBCcCOX1 state=present shell=/bin/bash
+- user: name=s504993 password=$1$SomeSalt$8SMaacV4mFNmEsLKB6alN/ state=present shell=/bin/bash
+- user: name=s514414 password=$1$SomeSalt$3RCB5kqyjDCK1NgrtobMS0 state=present shell=/bin/bash
+- user: name=s481009 password=$1$SomeSalt$g0NOJwUpKXHjWaBcrRov10 state=present shell=/bin/bash
+- user: name=s510398 password=$1$SomeSalt$MMHRbEObbYY7E20ByR8FP0 state=present shell=/bin/bash
+- user: name=s492724 password=$1$SomeSalt$76vqTSVfx66EYyNTNJL1r/ state=present shell=/bin/bash
+- user: name=s509560 password=$1$SomeSalt$5wJ52m1T5qP3XMuJaHO1U0 state=present shell=/bin/bash
+- user: name=s500555 password=$1$SomeSalt$if1WdDtHg/AcgKI6x2a7L1 state=present shell=/bin/bash
+- user: name=s511097 password=$1$SomeSalt$gmuozmte3RBk8mdpwBy5c0 state=present shell=/bin/bash
+- user: name=s510622 password=$1$SomeSalt$EIEk9zfoSVYEAkVjd8Ypy/ state=present shell=/bin/bash
+- user: name=s503364 password=$1$SomeSalt$vQU9z5ltHri0mZWmhg7yq/ state=present shell=/bin/bash
+- user: name=s458384 password=$1$SomeSalt$aZg5TMJ99F636BPzUR9/k. state=present shell=/bin/bash
+- user: name=s511083 password=$1$SomeSalt$aQmx2pfnJU/vY94anTA131 state=present shell=/bin/bash
+- user: name=s508175 password=$1$SomeSalt$Ngmsh3HD9Nfvd4DcHFuI4/ state=present shell=/bin/bash
+- user: name=s488785 password=$1$SomeSalt$v9NJD5i4iHSC7OK72ftt3. state=present shell=/bin/bash
+- user: name=s507388 password=$1$SomeSalt$bh/s7IXZ6cBAR8aQpKtpa/ state=present shell=/bin/bash
+- user: name=s490046 password=$1$SomeSalt$mNbUNOdr1Za84PRxWrE5z. state=present shell=/bin/bash
+- user: name=s494387 password=$1$SomeSalt$wuZuL6igTvYtEmSRkWvU8. state=present shell=/bin/bash
+- user: name=s511109 password=$1$SomeSalt$0ZN0wwL/4ZLdexPKWkF/81 state=present shell=/bin/bash
+- user: name=s513477 password=$1$SomeSalt$o9pOjZ.0BadnkCQxjmBmM0 state=present shell=/bin/bash
+- user: name=s506961 password=$1$SomeSalt$1o73nSEJx8kqgSMrUXkAH/ state=present shell=/bin/bash
+- user: name=s493497 password=$1$SomeSalt$Z2Zj2qApB3G3XXaelipmm1 state=present shell=/bin/bash
+- user: name=s509043 password=$1$SomeSalt$MiTfQH0Wi05EjQrEvrgu0. state=present shell=/bin/bash

@@ -1,9 +1,17 @@
 ---
 
 - name: Update and upgrade all packages to the latest version
-  apt: 
+  action:
+    apt pkg={{ item }} 
     upgrade=dist  
     update_cache=yes
+    state=present
+  with_items:
+  - gcc
+  - make
+  - build-essential  
+  - git
+  - curl
 
 - name: Autoremove unnecessary packages
   shell: apt-get -q -y autoremove
@@ -39,9 +47,3 @@
     dest=/etc/issue.net    
     backup=yes
   notify: restart ssh
-  
-
-- name: Install git
-  apt:
-    name=git
-    state=present  
