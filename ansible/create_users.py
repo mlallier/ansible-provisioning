@@ -3,7 +3,7 @@ import random
 import crypt
 char_set = string.ascii_lowercase +string.ascii_uppercase + string.digits
 
-users=["abdellatifdanba","arthurstomp","benvdstouwe","byran95","crist92","dionw","dutchneon","ejnijhof","hb117","herden","jan26th","jorisjbr","jurbraam94","lokkwanfoo","manuelbrand","martganzevles","matthiasmeerhof","penix","pindab0ter","piratninja","rachelswansen","robba024","royalclub","safirasuli","sanctuscoma","sebastianhilge","sjenk","sladebaumann","stijnno23","susie93","tomkaal","wesema"]
+users=["user1","user2","user3","...","usern"]
 
 password=[]
 
