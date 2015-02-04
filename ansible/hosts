@@ -1,8 +1,8 @@
 [vagrant]
-localhost:2222
+#localhost:2222
 
 [proxmox]
-server3.tezzt.nl
+#server3.tezzt.nl
 server7.tezzt.nl
 
 [aws]
