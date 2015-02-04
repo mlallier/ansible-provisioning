@@ -8,7 +8,6 @@ users=["abdellatifdanba","arthurstomp","benvdstouwe","byran95","crist92","dionw"
 password=[]
 
 print ">>>> BEGIN Python script"
-print "---"
 
 for user in users:
     pwd=''.join(random.sample(char_set*16, 16))
